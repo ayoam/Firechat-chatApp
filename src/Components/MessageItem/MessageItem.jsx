@@ -34,7 +34,7 @@ const MessageItem = ({message:{text,photoURL,senderName,createdAt},currentUser})
     <div className="mb-3" ref={eltRef}>
       <div className={"flex"+currentUserStyle[0]}>
         <img src={photoURL} alt="" className="w-8 h-8 object-cover rounded-full mt-2"/>
-        <div className={"ml-2"+currentUserStyle[1]}>
+        <div className={"ml-2 "+currentUserStyle[1]}>
           <div className={"p-2 pb-3 rounded-md max-w-md pr-4 shadow-lg"+currentUserStyle[4]}>
             <h2 className={"font-bold text-sm"+currentUserStyle[3]}>{senderName}</h2>
             <p className={"break-words"+currentUserStyle[3]}>{text}</p>

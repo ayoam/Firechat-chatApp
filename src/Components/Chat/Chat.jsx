@@ -5,6 +5,7 @@ import Messages from '../Messages/Messages';
 import SendMessage from '../SendMessage/SendMessage';
 import { FiLogOut } from 'react-icons/fi';
 import { AiFillFire } from 'react-icons/ai';
+import classes from '../Chat/Chat.module.css'
 
 const Chat = () => {
   const[messages,setMessages] = useState([]);
@@ -30,13 +31,13 @@ const Chat = () => {
           <h1 className="font-bold text-2xl text-white flex justify-center items-center"><AiFillFire className="mr-1" size={28}/>fireChat</h1>
           <div className="flex gap-2 justify-center items-center">
             <img src={photoURL} alt="" className="w-10 h-10 rounded-full"/>
-            <p className="text-white font-semibold">{displayName}</p>
+            <p className={"text-white font-semibold "+classes.displayName}>{displayName}</p>
             <button onClick={signOutHandler} className="p-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 shadow-lg"><FiLogOut/></button>
           </div>
         </div>
       </div>
 
-      <div className="overflow-y-scroll scroll-smooth	w-full max-w-5xl mx-auto h-5/6 scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-gray-100 px-3">
+      <div className="overflow-y-scroll scroll-smooth	w-full max-w-5xl mx-auto h-5/6 scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-gray-100 px-3 xs:px-1">
         <Messages messages={messages.slice(Messages.length-50)}/>
       </div>
       <div className="w-full max-w-5xl mx-auto">
